@@ -10,7 +10,7 @@ resource "aws_rds_cluster" "aurora_mysql" {
   database_name                = var.database_name
 
   db_subnet_group_name         = aws_db_subnet_group.subnet_group.name
-  vpc_security_group_ids       = var.rds_security_group_aurora_id
+  vpc_security_group_ids       = var.rds_security_group_ids
 
   manage_master_user_password  = true
   master_username              = var.db_username
@@ -27,13 +27,13 @@ resource "aws_rds_cluster_instance" "aurora_instances" {
   engine                    = aws_rds_cluster.aurora_mysql.engine
   db_subnet_group_name      = aws_db_subnet_group.subnet_group.name
   publicly_accessible       = false
-  vpc_security_group_ids    = var.rds_security_group_aurora_id
+  vpc_security_group_ids    = var.rds_security_group_ids
 }
 
 output "aurora_cluster_endpoint" {
   value = aws_rds_cluster.aurora_mysql.endpoint
 }
 
-output "aurora_cluster_instance_endpoint" {
-  value = aws_rds_cluster.aurora_instances.endpoint
-}
+#output "aurora_cluster_instance_endpoint" {
+#  value = aws_rds_cluster.aurora_instances.endpoint
+#}

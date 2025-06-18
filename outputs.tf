@@ -14,8 +14,8 @@ output "aurora_cluster_endpoint" {
   value = module.rds.aurora_cluster_endpoint
 }
 
-output "aurora_cluster_instance_endpoint" {
-  value = module.rds.aurora_cluster_instance_endpoint
-}
+#output "aurora_cluster_instance_endpoint" {
+#  value = module.rds.aurora_cluster_instance_endpoint
+#}
 
 

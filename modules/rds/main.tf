@@ -7,7 +7,7 @@ resource "aws_rds_cluster" "aurora_mysql" {
   cluster_identifier           = "aurora-mysql-cluster"
   engine                       = "aurora-mysql"
   engine_version               = "8.0.mysql_aurora.3.04.0"
-  database_name                = var.db_name
+  database_name                = var.database_name
 
   db_subnet_group_name         = aws_db_subnet_group.subnet_group.name
   vpc_security_group_ids       = var.rds_security_group_aurora_id

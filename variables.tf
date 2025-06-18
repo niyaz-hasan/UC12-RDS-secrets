@@ -22,7 +22,7 @@ variable "db_username" {
   default     = "admin"
 }
 
-variable "db_name" {
+variable "database_name" {
   description = "Name of the db_name"
   type        = string
   default     = "test"

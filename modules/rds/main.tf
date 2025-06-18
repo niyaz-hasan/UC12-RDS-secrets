@@ -26,8 +26,9 @@ resource "aws_rds_cluster_instance" "aurora_instances" {
   instance_class            = "db.t3.medium"
   engine                    = aws_rds_cluster.aurora_mysql.engine
   db_subnet_group_name      = aws_db_subnet_group.subnet_group.name
-  publicly_accessible       = false
   vpc_security_group_ids    = var.rds_security_group_ids
+  publicly_accessible       = false
+  
 }
 
 output "aurora_cluster_endpoint" {

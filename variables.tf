@@ -17,7 +17,13 @@ variable "region" {
 }
 
 variable "db_username" {
-  description = "Name of the region"
+  description = "Name of the db_username"
   type        = string
   default     = "admin"
+}
+
+variable "db_name" {
+  description = "Name of the db_name"
+  type        = string
+  default     = "test"
 }

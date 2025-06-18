@@ -18,6 +18,8 @@ module "rds" {
   rds_security_group_ids  = [module.sg_group.rds_security_group_aurora_id]
 }
 
+
+# test aws cli to check connection of aurora database 
 module "instances_test" {
   source          = "./modules/instance"
   subnet_id       = module.vpc.public_subnets[0]
